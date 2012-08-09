@@ -12,6 +12,10 @@
 				margin: 10px auto 0;
 			}
 			
+			.text_center {
+				text-align: center;
+			}
+			
 			.bd_black {
 				border: solid 3px black;
 			}
@@ -35,7 +39,14 @@
 			
 			.bg_green {
 				background-color: green;
-			}			
+			}
+			
+			.radius {  
+			    border-radius: 10px;        /* CSS3草案 */  
+			    -webkit-border-radius: 10px;    /* Safari,Google Chrome用 */  
+			    -moz-border-radius: 10px;   /* Firefox用 */  
+			} 
+			
 		</style>
 		<script type="text/javascript">
 			window.addEventListener("load", function() {
@@ -47,12 +58,23 @@
 				
 				var btn = document.getElementById("btn");
 				btn.addEventListener("click", changeStyle, false);
+				var btn2 = document.getElementById("btn2");
+				btn2.addEventListener("click", changeStyle2, false);
 			}, false);
 			
 			function changeStyle() {
 				var sample = document.getElementById("sample");
 							
-				sample.className = "bg_red bd_blue";
+				sample.className = "bg_red";
+				sample.classList.add("bd_yellow");
+				sample.classList.add("radius");
+			}
+			
+			function changeStyle2() {
+				var sample = document.getElementById("sample");
+							
+				sample.style.backgroundColor = "white";
+				sample.style.color = "red";
 			}
 
 			
@@ -61,9 +83,9 @@
 		<!-- Date: 2012-08-09 -->
 	</head>
 	<body>
-		<div id="sample" class="bd_black bg_yellow"> </div>
+		<div id="sample" class="text_center bd_black bg_yellow">Sample</div>
 		<input id="btn" type="button" name="sample" value="change STYLE" style="display: block; margin: 10px auto 0;">
-
+		<input id="btn2" type="button" name="sample2" value="change STYLE" style="display: block; margin: 10px auto 0;">
 	</body>
 </html>
 
