@@ -5,6 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>change stylesheet</title>
+		<script type="text/javascript" src="jquery-1.7.2.min.js"> </script>
 		<style>
 			#sample { 
 				width: 100px;
@@ -56,10 +57,12 @@
 			document.addEventListener("DOMContentLoaded", function() {
 				console.log("DOM onload");
 				
+				//alert($("#sample").attr("class"));
+				
 				var btn = document.getElementById("btn");
 				btn.addEventListener("click", changeStyle, false);
 				var btn2 = document.getElementById("btn2");
-				btn2.addEventListener("click", changeStyle2, false);
+				btn2.addEventListener("click", changeStyle3, false);
 			}, false);
 			
 			function changeStyle() {
@@ -71,10 +74,19 @@
 			}
 			
 			function changeStyle2() {
-				var sample = document.getElementById("sample");
-							
+				var sample = document.getElementById("sample");				
 				sample.style.backgroundColor = "white";
 				sample.style.color = "red";
+			}
+			
+			function changeStyle3() {
+				$("#sample").css({
+					backgroundColor : "red",
+					border: "solid 3px black"
+				});
+				
+				$("#sample").css("backgroundColor", "blue");
+				$("#sample").css("border", "solid 3px yellow");
 			}
 
 			
