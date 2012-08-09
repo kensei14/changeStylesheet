@@ -12,36 +12,57 @@
 				margin: 10px auto 0;
 			}
 			
-			.bd {
-				border: solid 1px black;
+			.bd_black {
+				border: solid 3px black;
 			}
 			
-			.bg_color {
+			.bd_yellow {
+				border: solid 3px yellow;
+			}
+			
+			.bd_blue {
+				border: solid 3px blue;
+			}
+			
+			
+			.bg_yellow {
 				background-color: yellow;
 			}
+			
+			.bg_red {
+				background-color: red;
+			}			
+			
+			.bg_green {
+				background-color: green;
+			}			
 		</style>
 		<script type="text/javascript">
-			document.onload = function() {
-				console.log("document onload");
-			}
-			
-			window.onload = function() {
-				console.log("window onload");
-			}
-			
 			window.addEventListener("load", function() {
-				console.log("window onload by listener");
+				console.log("window onload");
 			}, false);
 			
 			document.addEventListener("DOMContentLoaded", function() {
 				console.log("DOM onload");
+				
+				var btn = document.getElementById("btn");
+				btn.addEventListener("click", changeStyle, false);
 			}, false);
+			
+			function changeStyle() {
+				var sample = document.getElementById("sample");
+							
+				sample.className = "bg_red bd_blue";
+			}
+
+			
 		</script>
 		<meta name="author" content="Mack" />
 		<!-- Date: 2012-08-09 -->
 	</head>
 	<body>
-		<div id="sample" class="bd bg_color"> </div>
+		<div id="sample" class="bd_black bg_yellow"> </div>
+		<input id="btn" type="button" name="sample" value="change STYLE" style="display: block; margin: 10px auto 0;">
 
 	</body>
 </html>
