@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>change stylesheet</title>
+		<style>
+			#sample { 
+				width: 100px;
+				height: 100px;
+				margin: 10px auto 0;
+			}
+			
+			.bd {
+				border: solid 1px black;
+			}
+			
+			.bg_color {
+				background-color: yellow;
+			}
+		</style>
+		<script type="text/javascript">
+			document.onload = function() {
+				console.log("document onload");
+			}
+			
+			window.onload = function() {
+				console.log("window onload");
+			}
+			
+			window.addEventListener("load", function() {
+				console.log("window onload by listener");
+			}, false);
+			
+			document.addEventListener("DOMContentLoaded", function() {
+				console.log("DOM onload");
+			}, false);
+		</script>
+		<meta name="author" content="Mack" />
+		<!-- Date: 2012-08-09 -->
+	</head>
+	<body>
+		<div id="sample" class="bd bg_color"> </div>
+
+	</body>
+</html>
+
